@@ -11,14 +11,16 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/roberttaylor/spring/test/beans/beans.xml");
 		
 		Person person = (Person)context.getBean("person");
-		Person person2 = (Person)context.getBean("person");
 		
 		person.setTaxId(666);
 		
 //		Address address = (Address)context.getBean("address");
 //		System.out.println(address);
 		
-		System.out.println(person2);
+		System.out.println(person);
+		
+		Address address2 = (Address)context.getBean("address2");
+		System.out.println(address2);
 		
 		((ClassPathXmlApplicationContext)context).close();
 
